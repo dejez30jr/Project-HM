@@ -5,11 +5,11 @@ use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
-    public function index($category = 'all')
+    public function index($category)
     {
         $images = $this->getImages();
         
-        if ($category !== 'all') {
+        if ($category) {
             $images = $images->where('category', $category);
         }
 

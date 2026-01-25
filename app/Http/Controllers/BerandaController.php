@@ -2,69 +2,71 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
-
-class BerandaController extends Controller
-{
+class BerandaController extends Controller {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
+    * Display a listing of the resource.
+    */
+
+    public function index() {
         // Logic to show the beranda page
-        return view('pages.Beranda');
+        return view( 'pages.Beranda' );
     }
 
-    public function portfolio()
-    {
+    public function portfolio() {
         // Logic to show the beranda page
-        return view('pages.portfolio');
+        return view( 'pages.portfolio' );
     }
 
-    // public function show(){
-
-    //     return view('pages.portfolio');
+    // public function switch( string $lang ): RedirectResponse {
+    //     session( [ 'locale' => $lang ] );
+    //     return back();
     // }
 
+    // public function show() {
+
+    //     return view( 'pages.portfolio' );
+    // }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
+    * Show the form for creating a new resource.
+    */
+
+    public function create() {
         //
     }
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
+    * Store a newly created resource in storage.
+    */
+
+    public function store( Request $request ) {
         //
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
+    * Show the form for editing the specified resource.
+    */
+
+    public function edit( string $id ) {
         //
     }
 
     /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
+    * Update the specified resource in storage.
+    */
+
+    public function update( Request $request, string $id ) {
         //
     }
 
     /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
+    * Remove the specified resource from storage.
+    */
+
+    public function destroy( string $id ) {
         //
     }
 }

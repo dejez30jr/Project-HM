@@ -2,40 +2,6 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Hanz Management | Agency SPG & Manpower</title>
-    <script src="https://cdn.tailwindcss.com">
-    </script>
-    <link rel="icon" href="{{ asset('images/HM.webp') }}" type="image/png">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="{{ asset('css/Beranda.css') }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
-    
-     <!-- seo -->
-      <meta name="description" 
-      content="Hanz Management adalah agency SPG & penyedia manpower berbasis di Bogor. Menyediakan jasa SDM terlatih, event organizer, dekorasi event, dan layanan promosi di seluruh Indonesia.">
-      <meta name="keywords" 
-      content="agency spg, jasa manpower, event organizer Bogor, dekorasi event, penyedia SDM, agency Bogor, Hanz Management, jasa promosi Indonesia">
-      <meta name="author" content="Hanz Management">
-      <meta name="robots" content="index, follow">
-      <meta property="og:title" content="Hanz Management – Agency SPG & Manpower Profesional Bogor & Indonesia">
-      <meta property="og:description" 
-      content="Agency SPG & manpower berbasis di Bogor dengan layanan SDM, event organizer, dekorasi & produksi event di seluruh Indonesia.">
-       <meta property="og:type" content="website">
-       <meta property="og:url" content="https://www.hanzmanagement.com">
-       <meta property="og:image" content="{{ asset('images/HM.webp') }}">
-    
-    <style>
-        *{
-            scroll-behavior: smooth;
-        }
-         body {
-            font-family: "Inter", sans-serif;
-        }
-        .clip-angled {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
-        }
-    </style>
 </head>
 <body class="bg-[#F9FAFB] text-[#0B0E1E]">
     @extends('layouts.app')
@@ -45,7 +11,7 @@
         <!-- ====== herosection ======= -->
     <section class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:w-auto md:gap-20 mt-10" data-aos="fade-up" data-aos-duration="3000">
     <!-- Kolom gambar -->
-    <div class="order-1 md:order-2 grid grid-cols-2 grid-rows-2 gap-4 sm:grid-cols-3 sm:grid-rows-2">
+    <div class="order-1 md:order-1 lg:order-2 grid grid-cols-2 grid-rows-2 gap-4 sm:grid-cols-3 sm:grid-rows-2">
         <div class="sm:rounded-br-[30px] relative rounded-lg overflow-hidden sm:col-span-1 sm:row-span-2">
             <img alt="Modern office building exterior with large windows and gray facade"
                 class="w-full h-full object-cover" height="350" loading="lazy"
@@ -90,8 +56,8 @@
     </div>
 
     <!-- Kolom teks -->
-    <div class="order-2 md:order-1 max-w-lg flex flex-col space-y-6 w-full">
-        <h1 class="text-[2rem] md:text-[3.5rem] leading-[2.5rem] md:leading-[4.70rem] font-extrabold tracking-tight max-w-md">
+    <div class="order-2 md:order-2 lg:order-1 flex flex-col space-y-6 w-full">
+        <h1 class="text-[2rem] md:text-[3.5rem] leading-[2.5rem] md:leading-[4.70rem] font-extrabold tracking-tight lg:max-w-md">
             Agency Spg & Event Organizer Terbaik di Indonesia
         </h1>
         <p class="text-[#6B7280] text-base max-w-md leading-relaxed">
@@ -155,7 +121,7 @@
     <br>
     <br>
     <!-- ====== about section ========= -->
-    <div class="max-w-7xl mx-auto px-7 grid-cols-1 md:grid gris-cols-2 gap-[45px] md:grid-cols-2 px-6" id="about" data-aos="fade-up" data-aos-duration="3000">
+    <div class="max-w-7xl mx-auto px-7 grid grid-cols-1 lg:grid-cols-2 gap-[45px] px-6" id="about" data-aos="fade-up" data-aos-duration="3000">
       <img src="{{asset('images/about.png')}}" alt="Hanz Management" loading="lazy">
     <div class="mt-10 md:mt-0">
      <h1 class="text-2xl sm:text-3xl font-extrabold mb-2 leading-tight">
@@ -174,18 +140,18 @@
 
     <!-- =======  Why chose me detail ========== -->
     <br>
-    <div class="max-w-7xl mx-auto rounded-3xl md:mt-[20px] bg-[] p-6 sm:p-10 md:p-6" data-aos="fade-up" data-aos-duration="3000">
+    <div class="max-w-7xl mx-auto rounded-3xl md:mt-[20px] p-6 sm:p-10 md:p-6" data-aos="fade-up" data-aos-duration="3000">
     <div class="flex flex-col md:flex-row md:flex-wrap md:gap-x-20 gap-y-10">
       <div class="flex-wrap flex gap-4 justify-between w-full">
       <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1a1a1a] md:w-1/3 leading-tight">
         Kenapa anda Memilih kami?
       </h2>
-      <div class="md:max-w-[500px]">
+      <div class="md:max-w-[500px] text-gray-600">
       <p>kami mengutamakan kualitas, kepercayaan, dan kepuasan Anda di setiap layanan yang kami berikan.</p>
       </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
         <!-- Item 1 -->
         <div class="flex space-x-4 shadow-md p-4">
           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#7ed6fb] flex items-center justify-center">
@@ -282,7 +248,7 @@
     </div>
    </div>
    <br>
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
     
     <!-- Card 1 -->
     <div class="bg-white shadow-md rounded-[20px] pb-4">
@@ -451,11 +417,11 @@
   <section id="portfolio" class="max-w-7xl mx-auto px-6 py-12" data-aos="fade-up" data-aos-duration="3000">
   <div class="flex justify-between py-6"> 
     <a href="/portfolio" 
-       class="inline-block px-2 py-2 md:px-6 md:py-4 bg-blue-600 text-white mx:text-sm rounded-3xl font-small hover:bg-blue-700 transition">
+       class="inline-block px-4 py-2 md:px-6 md:py-4 bg-blue-600 text-white mx:text-sm rounded-3xl font-small hover:bg-blue-700 transition">
     Semua
     </a>
       <div class="flex items-center gap-2">
-          ⮜<div class="w-[60px] md:w-[200px] bg-gray-400 h-[1px]"></div>
+           <i class="fa-solid fa-left-long"></i><div class="w-[60px] md:w-[200px] bg-gray-400 h-[1px]"></div>
           <p class="text-sm">Proyek Kami</p>
       </div>
   </div>

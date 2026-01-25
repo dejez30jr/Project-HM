@@ -3,12 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+       <title>Hanz Management | Agency SPG & Manpower</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+  />
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link rel="icon" href="{{ asset('images/HM.webp') }}" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{{ asset('css/Beranda.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+    
+     <!-- seo -->
+      <meta name="description" 
+      content="Hanz Management adalah agency SPG & penyedia manpower berbasis di Bogor. Menyediakan jasa SDM terlatih, event organizer, dekorasi event, dan layanan promosi di seluruh Indonesia.">
+      <meta name="keywords" 
+      content="agency spg, jasa manpower, event organizer Bogor, dekorasi event, penyedia SDM, agency Bogor, Hanz Management, jasa promosi Indonesia">
+      <meta name="author" content="Hanz Management">
+      <meta name="robots" content="index, follow">
+      <meta property="og:title" content="Hanz Management – Agency SPG & Manpower Profesional Bogor & Indonesia">
+      <meta property="og:description" 
+      content="Agency SPG & manpower berbasis di Bogor dengan layanan SDM, event organizer, dekorasi & produksi event di seluruh Indonesia.">
+       <meta property="og:type" content="website">
+       <meta property="og:url" content="https://www.hanzmanagement.com">
+       <meta property="og:image" content="{{ asset('images/HM.webp') }}">
+    
+    <style>
+        *{
+            scroll-behavior: smooth;
+        }
+         body {
+            font-family: "Inter", sans-serif;
+        }
+        .clip-angled {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
+        }
+    </style>
 </head>
 <body>
     <!-- navbar -->
-        <nav>
-         <header class="max-w-7xl mx-auto px-7 py-6 flex items-center justify-between sticky top-0 bg-white z-50">
+    <nav>
+    <header class="max-w-7xl mx-auto px-7 py-6 flex items-center justify-between sticky top-0 bg-[#F9FAFB] z-50">
     <div class="flex items-center space-x-2">
         <div class="w-[150px] md:w-[200px]">
         <img src="{{ asset('images/hm-logoweb.jpg') }}" alt="" class="w-full">
@@ -24,28 +62,28 @@
             <span class="block absolute h-0.5 w-6 bg-black rounded left-1 top-6 transition-transform duration-300">
             </span>
         </button>
-        <nav class="hidden md:flex items-center space-x-6 text-sm font-normal" id="menu">
+        <nav class="hidden md:flex items-center space-x-6 text-md font-normal" id="menu">
             <a class="hover:underline whitespace-nowrap" href="/">
                 Home
             </a>
             <a class="hover:underline whitespace-nowrap" href="/#about">
-                About
+                Tentang Kami
             </a>
             <div class="relative group">
                 <button aria-expanded="false" aria-haspopup="true"
                     class="flex items-center space-x-1 hover:underline focus:outline-none whitespace-nowrap">
                     <span>
                         <a href="/#service">
-                            Services
+                            Layanan
                         </a>
                     </span>
                 </button>
             </div>
             <a class="hover:underline whitespace-nowrap" href="/#portfolio">
-                Portfolio
+                Proyek Kami
             </a>
             <a class="hover:underline whitespace-nowrap" href="#">
-                Contact Us
+                Kontak
             </a>
         </nav>
     </header>
@@ -80,22 +118,22 @@
             </li>
             <li>
                 <a class="block hover:underline" href="/#about">
-                    About
+                    Tentang Kami
                 </a>
             </li>
             <li>
                 <a class="block hover:underline" href="/#service">
-                Service 
+                Layanan 
                 </a>
             </li>
-            <!-- <li>
-                <a class="block hover:underline" href="#">
-                    Blog
+            <li>
+                <a class="block hover:underline" href="/#portfolio">
+                  Proyek Kami
                 </a>
-            </li> -->
+            </li>
             <li>
                 <a class="block hover:underline" href="#">
-                    Contact Us
+                    Kontak
                 </a>
             </li>
         </ul>
@@ -253,7 +291,7 @@
 <!-- cta wa -->
  <a href="https://wa.me/6282110040066" target="_blank"
    class="fixed bottom-4 right-2 z-50 text-white px-4 rounded-full flex items-center gap-2 transition duration-300">
-  <img src="https://www.beresweb.com/wp-content/uploads/konsulwa-3.png" class="w-[200px]" alt="">
+  <img src="{{ asset('images/cta.png') }}" class="w-[160px] sm:w-[200px]" alt="">
 </a>
 
 
