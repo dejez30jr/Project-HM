@@ -46,7 +46,7 @@
 <body>
     <!-- navbar -->
     <nav>
-    <header class="max-w-7xl mx-auto px-7 py-6 flex items-center justify-between sticky top-0 bg-[#F9FAFB] z-50">
+    <header class="md:max-w-[93%] max-w-7xl mx-auto px-7 py-6 flex items-center justify-between sticky top-0 bg-[#F9FAFB] z-50">
     <div class="flex items-center space-x-2">
         <div class="w-[150px] md:w-[200px]">
         <img src="{{ asset('images/hm-logoweb.jpg') }}" alt="" class="w-full">
