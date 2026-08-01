@@ -1,120 +1,137 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<style>
-       body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      color: #333;
+@extends('layouts.app')
+
+@php
+    $labels = [
+        'all' => 'Portofolio',
+        'entertaiment' => 'Entertainment',
+        'promotion' => 'Promotion',
+        'event' => 'Event',
+        'production' => 'Production',
+    ];
+
+    $label = $labels[$activeCategory] ?? 'Portofolio';
+
+    $meta = [
+        'all' => [
+            'title' => 'Portofolio Proyek | Hanz Management',
+            'description' => 'Lihat portofolio proyek Hanz Management: SPG, SPB, event organizer, dekorasi dan produksi event untuk berbagai brand di Indonesia.',
+        ],
+        'entertaiment' => [
+            'title' => 'Portofolio Entertainment | Hanz Management',
+            'description' => 'Portofolio hiburan dan entertainment Hanz Management: host, MC, talent panggung dan hiburan acara untuk brand ternama di Indonesia.',
+        ],
+        'promotion' => [
+            'title' => 'Portofolio Promosi & Brand Activation | Hanz Management',
+            'description' => 'Portofolio kegiatan promosi dan brand activation Hanz Management: SPG, SPB, roadshow dan booth promotion untuk berbagai brand.',
+        ],
+        'event' => [
+            'title' => 'Portofolio Event & Dekorasi | Hanz Management',
+            'description' => 'Portofolio event dan dekorasi Hanz Management: event organizer, dekorasi panggung dan produksi acara di Indonesia.',
+        ],
+        'production' => [
+            'title' => 'Portofolio Produksi & Branding | Hanz Management',
+            'description' => 'Portofolio produksi dan branding Hanz Management: produksi booth, brand activation dan kebutuhan produksi event.',
+        ],
+    ];
+
+    $meta = $meta[$activeCategory] ?? $meta['all'];
+@endphp
+
+@section('title', $meta['title'])
+@section('description', $meta['description'])
+@section('canonical', $activeCategory === 'all' ? route('portfolio') : route('portfolio', $activeCategory))
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/Portfolio.css') }}">
+@endpush
+
+@section('schema')
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "@id": "{{ url()->current() }}#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Beranda",
+                        "item": "{{ url('/') }}"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Portofolio",
+                        "item": "{{ route('portfolio') }}"
+                    }@if($activeCategory !== 'all'),
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "{{ $label }}",
+                        "item": "{{ route('portfolio', $activeCategory) }}"
+                    }@endif
+                ]
+            },
+            {
+                "@type": "ItemList",
+                "@id": "{{ url()->current() }}#portfolio-list",
+                "name": "Portofolio {{ $label }} Hanz Management",
+                "itemListElement": [
+                    @foreach($images as $image)
+                    {
+                        "@type": "ListItem",
+                        "position": {{ $loop->iteration }},
+                        "item": {
+                            "@type": "ImageObject",
+                            "contentUrl": "{{ asset($image['path']) }}",
+                            "name": "Foto portofolio {{ $label }} Hanz Management"
+                        }
+                    }@if(!$loop->last),@endif
+                    @endforeach
+                ]
+            }
+        ]
     }
+    </script>
+@endsection
 
-    h1 {
-      text-align: center;
-      font-size: 2em;
-      margin: 30px 0px 0px;
-      color: #0d1c5b;
-    }
+@section('content')
+    <div class="portfolio-page max-w-7xl mx-auto px-6 py-6 md:py-12">
+        <h1>
+            Portofolio {{ $label }} Hanz Management
+        </h1>
 
-    .filters {
-      margin-top: 12px;
-      text-align: center;
-      margin-bottom: 10px;
-    }
+        <div class="filters">
+            <a href="{{ route('portfolio') }}"
+                class="px-6 py-2 {{ $activeCategory === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200' }} rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
+                All
+            </a>
+            <a href="{{ route('portfolio', 'entertaiment') }}"
+                class="px-6 py-2 {{ $activeCategory === 'entertaiment' ? 'bg-blue-600 text-white' : 'bg-gray-200' }} rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
+                Entertainment
+            </a>
+            <a href="{{ route('portfolio', 'promotion') }}"
+                class="px-6 py-2 {{ $activeCategory === 'promotion' ? 'bg-blue-600 text-white' : 'bg-gray-200' }} rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
+                Promotion
+            </a>
+            <a href="{{ route('portfolio', 'event') }}"
+                class="px-6 py-2 {{ $activeCategory === 'event' ? 'bg-blue-600 text-white' : 'bg-gray-200' }} rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
+                Event
+            </a>
+            <a href="{{ route('portfolio', 'production') }}"
+                class="px-6 py-2 {{ $activeCategory === 'production' ? 'bg-blue-600 text-white' : 'bg-gray-200' }} rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
+                Production
+            </a>
+        </div>
 
-    .filters button {
-      background: none;
-      border: none;
-      font-size: 1rem;
-      margin: 0 10px;
-      cursor: pointer;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-
-    .filters button:hover,
-    .filters button.active {
-      background: #0d1c5b;
-      color: #fff;
-    }
-
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .portfolio-item {
-      background: #f4f4f4;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .portfolio-item img {
-      width: 100%;
-      display: block;
-      filter: grayscale(10%) contrast(1.1);
-      transition: filter 0.3s ease, transform 0.3s ease;
-    }
-
-    .portfolio-item:hover img {
-      filter: none;
-      transform: scale(1.03);
-    }
-
-    @media (max-width: 600px) {
-      .filters button {
-        margin: 5px;
-        display: inline-block;
-      }
-    }
-</style>
-<body>
-
-   @extends('layouts.app')
-
-   @section('content')
-  <div class="filters">
-     <a href="{{ route('portfolio', 'all') }}" 
-       class="inline-block px-6 py-2 {{ $activeCategory === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200' }} rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
-        All
-    </a>
-    <a href="{{ route('portfolio', 'entertaiment') }}" 
-       class="inline-block px-6 py-2 {{ $activeCategory === 'entertaiment' ? 'bg-blue-600 text-white' : 'bg-gray-200' }} rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
-        Entertainment
-    </a>
-    <a href="{{ route('portfolio', 'promotion') }}" 
-       class="inline-block px-6 py-2 {{ $activeCategory === 'promotion' ? 'bg-blue-600 text-white' : 'bg-gray-200' }} rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
-        Promotion
-    </a>
-    <a href="{{ route('portfolio', 'event') }}" 
-       class="inline-block px-6 py-2 {{ $activeCategory === 'event' ? 'bg-blue-600 text-white' : 'bg-gray-200' }} rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
-        Event
-    </a>
-    <a href="{{ route('portfolio', 'production') }}" 
-       class="inline-block px-6 py-2 {{ $activeCategory === 'production' ? 'bg-blue-600 text-white' : 'bg-gray-200' }} rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
-        Production
-    </a>
-  </div>
-
-  <div class="portfolio">
-    @foreach($images as $image)
-    <div class="portfolio-item">
-        <img src="{{ asset($image['path']) }}" alt="{{ $image['category'] }}" class="w-full h-64 object-cover">
+        <div class="portfolio">
+            @foreach($images as $image)
+            <div class="portfolio-item">
+                <img src="{{ asset($image['path']) }}" alt="Foto portofolio {{ $label }} Hanz Management" class="w-full h-64 object-cover" loading="lazy" decoding="async">
+            </div>
+            @endforeach
+        </div>
     </div>
-    @endforeach
-  </div>
-
-  @endsection
-</body>
-</html>
+@endsection

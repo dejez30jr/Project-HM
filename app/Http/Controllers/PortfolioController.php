@@ -5,19 +5,27 @@ use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
-    public function index($category)
-    {
-        $images = $this->getImages();
-        
-        if ($category) {
-            $images = $images->where('category', $category);
-        }
+    public function index($category = null)
+{
+    $images = $this->getImages();
 
-        return view('pages.portfolio', [
-            'images' => $images,
-            'activeCategory' => $category
-        ]);
+    // kalau category ada dan bukan valid → 404
+    $validCategories = ['entertaiment', 'promotion', 'event', 'production'];
+
+    if ($category && !in_array($category, $validCategories)) {
+        abort(404);
     }
+
+    // filter kalau ada category
+    if ($category) {
+        $images = $images->where('category', $category);
+    }
+
+    return view('pages.portfolio', [
+        'images' => $images,
+        'activeCategory' => $category ?? 'all'
+    ]);
+}
 
     private function getImages()
     {

@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.clip-angled {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
+}

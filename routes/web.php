@@ -5,20 +5,16 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\SitemapController;
 
 // Route for beranda
 Route::get('/', [BerandaController::class, 'index']);
 
 Route::get('/portfolio/{category?}', [PortfolioController::class, 'index'])
     ->name('portfolio')
-    ->where('category', 'all|entertaiment|promotion|event|production');
+    ->where('category', 'entertaiment|promotion|event|production');
 
-// Route::get('/locale/{lang}', [BerandaController::class, 'switch'])
-//     ->name('locale.switch')
-//     ->where('lang', 'en|id');
-
-// Route for portfolio
-Route::get('/portfolio', [BerandaController::class, 'portfolio']);
-
+// Sitemap untuk SEO
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
 
