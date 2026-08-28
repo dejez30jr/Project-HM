@@ -277,7 +277,7 @@
      <h1 class="text-2xl sm:text-3xl font-extrabold mb-2 leading-tight">
       Tentang Kami
      </h1>
-     <p class="text-sm md:text-lg text-[#1a1a1a] mb-6 leading-relaxed">
+     <p class="md:text-lg text-gray-600 mb-6 leading-relaxed">
        Hanz Management merupakan perusahaan penyedia jasa agency yang menyediakan banyak SDM terlatih yang berkompetensi dan mempunyai dedikasi penuh, yang berbasis di Kota bogor dan memiliki sumber daya yang tersebar di seluruh kota di Indonesia, kami hadir untuk memenuhi kebutuhan perusahaan anda baik dari segi Jasa Penyedia Manpower, pengadaan barang, produksi property event. decoration, dll baik untuk promosi maupun entertainment.
      </p>
      <a class="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-blue-700 transition" href="#">
