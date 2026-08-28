@@ -388,15 +388,15 @@
    <!-- banner -->
    <div class="relative rounded-[30px] overflow-hidden h-40 sm:h-48 md:h-56">
     <img alt="Tim Hanz Management sedang bekerja di kantor" class="w-full h-full object-cover" src="{{ asset('images/img-hero.webp') }}"/>
-    <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-black/10 rounded-lg">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-black/30 rounded-lg">
     </div>
-    <div class="absolute left-6 bottom-4 text-white max-w-lg text-[15px] sm:text-[22px] md:text-[24px] font-normal leading-snug">
+    <div class="absolute flex w-full justify-between flex-wrap p-4 bottom-4 right-0 text-white text-[15px] sm:text-[22px] md:text-[24px] font-normal leading-snug">
      Kami menyediakan berbagai layanan
      <br/>
      Strategic Marketing
     <div class="mt-4">
     <a href="{{ route('services') }}"
-        class="inline-flex p-2 px-4 items-center gap-2 bg-[#4F46E5] text-white rounded-full md:px-8 px-1 md:py-3 py-2 md:sm text-[10px] font-semibold hover:bg-indigo-600 transition-colors">
+        class="inline-flex p-2 px-4 items-center gap-2 bg-[#4F46E5] text-white rounded-full md:px-8 px-1 md:py-3 py-2 md:text-lg text-[10px] font-semibold hover:bg-indigo-600 transition-colors">
         Lihat Semua Layanan
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
