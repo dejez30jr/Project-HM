@@ -7,7 +7,7 @@ class PortfolioController extends Controller
 {
     public function index($category = null)
 {
-    $images = $this->getImages();
+    $allImages = $this->getImages();
 
     // kalau category ada dan bukan valid → 404
     $validCategories = ['entertaiment', 'promotion', 'event', 'production'];
@@ -17,13 +17,13 @@ class PortfolioController extends Controller
     }
 
     // filter kalau ada category
-    if ($category) {
-        $images = $images->where('category', $category);
-    }
+    $images = $category ? $allImages->where('category', $category) : $allImages;
 
     return view('pages.portfolio', [
         'images' => $images,
-        'activeCategory' => $category ?? 'all'
+        'activeCategory' => $category ?? 'all',
+        'totalImages' => $allImages->count(),
+        'categoryCounts' => $allImages->countBy('category'),
     ]);
 }
 
