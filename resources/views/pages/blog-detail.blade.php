@@ -39,7 +39,7 @@
 
 @section('content')
     <main class="bg-transparent text-[#0B0E1E]">
-        <div class="w-full px-2 pt-10 md:pt-16 pb-16 md:pb-20">
+        <div class="w-full pt-10 md:pt-16 pb-16 md:pb-20">
             <nav aria-label="Breadcrumb" class="text-sm text-gray-500 mb-10">
                 <ol class="flex flex-wrap items-center gap-x-2 gap-y-1">
                     <li><a href="{{ url('/') }}" class="hover:underline">Beranda</a></li>

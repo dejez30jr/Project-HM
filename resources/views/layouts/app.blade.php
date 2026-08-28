@@ -52,7 +52,7 @@
 <body>
     <!-- navbar -->
     <nav>
-    <header class="w-full mx-auto px-10 py-4 flex items-center justify-between sticky top-0 bg-white z-50">
+    <header class="w-full mx-auto px-6 py-4 flex items-center justify-between sticky top-0 bg-white z-50">
     <div class="flex items-center space-x-2">
         <div class="w-[150px]">
         <img src="{{ asset('images/hm-logo.webp') }}" alt="Logo hanzmanagement" loading="eager" fetchpriority="high" class="w-full">
