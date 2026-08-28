@@ -42,8 +42,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Tailwind static CSS (compiled, bukan CDN runtime) -->
-    <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}" />
+    <!-- Tailwind via Vite (dev hot reload / build) -->
+    @vite(['resources/css/tailwind.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset('css/Beranda.css') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
 
@@ -52,9 +52,9 @@
 <body>
     <!-- navbar -->
     <nav>
-    <header class="md:max-w-[93%] max-w-7xl mx-auto px-7 py-6 flex items-center justify-between sticky top-0 bg-[#F9FAFB] z-50">
+    <header class="w-full mx-auto px-10 py-4 flex items-center justify-between sticky top-0 bg-white z-50">
     <div class="flex items-center space-x-2">
-        <div class="w-[150px] md:w-[200px]">
+        <div class="w-[150px]">
         <img src="{{ asset('images/hm-logo.webp') }}" alt="Logo hanzmanagement" loading="eager" fetchpriority="high" class="w-full">
         </div>
     </div>
@@ -79,7 +79,7 @@
                 <button aria-expanded="false" aria-haspopup="true"
                     class="flex items-center space-x-1 hover:underline focus:outline-none whitespace-nowrap">
                     <span>
-                        <a href="/#service">
+                        <a href="{{ route('services') }}">
                             Layanan
                         </a>
                     </span>
@@ -87,6 +87,9 @@
             </div>
             <a class="hover:underline whitespace-nowrap" href="/#portfolio">
                 Project Kami
+            </a>
+            <a class="hover:underline whitespace-nowrap" href="{{ route('blog') }}">
+                Blog
             </a>
             <a class="hover:underline whitespace-nowrap" href="#">
                 Kontak
@@ -128,13 +131,18 @@
                 </a>
             </li>
             <li>
-                <a class="block hover:underline" href="/#service">
+                <a class="block hover:underline" href="{{ route('services') }}">
                 Layanan 
                 </a>
             </li>
             <li>
                 <a class="block hover:underline" href="/#portfolio">
                   Project Kami
+                </a>
+            </li>
+            <li>
+                <a class="block hover:underline" href="{{ route('blog') }}">
+                  Blog
                 </a>
             </li>
             <li>
@@ -147,7 +155,7 @@
 
 
     <!-- Main content -->
-     <div class="content sm:px-10">
+     <div class="content lg:px-12 px-6">
          <!-- This is where the content will be injected -->
         @yield('content')
      </div>
@@ -258,16 +266,16 @@
          Contact Us
         </a>
        </li>
-       <li>
-        <a class="text-white" href="#">
-         Blog
-        </a>
-       </li>
-       <li>
-        <a class="text-white" href="#">
-         Help Center
-        </a>
-       </li>
+        <li>
+         <a class="text-white" href="{{ route('blog') }}">
+          Blog
+         </a>
+        </li>
+        <li>
+         <a class="text-white" href="https://wa.me/6282110040066" target="_blank" rel="noopener">
+          Contact Us
+         </a>
+        </li>
       </ul>
      </div>
     </div>

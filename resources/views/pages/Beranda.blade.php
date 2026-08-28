@@ -5,7 +5,7 @@
 @section('canonical', url('/'))
 
 @push('styles')
-    <link rel="preload" as="image" href="{{ asset('images/mobile.webp') }}" fetchpriority="high">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 @endpush
 
 @section('schema')
@@ -97,76 +97,138 @@
 @endsection
 
 @section('content')
-    <main class="bg-[#F9FAFB] text-[#0B0E1E]">
-        <!-- ====== herosection ======= -->
-    <section class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 md:w-auto md:gap-20 mt-2 md:mt-10">
-    <!-- Kolom gambar -->
-    <div class="order-1 md:order-1 lg:order-2 grid grid-cols-2 grid-rows-2 gap-2 md:gap-4 sm:grid-cols-3 sm:grid-rows-2">
-        <div class="sm:rounded-br-[30px] relative rounded-lg overflow-hidden sm:col-span-1 sm:row-span-2">
-            <img alt="Modern office building exterior with large windows and gray facade"
-                class="w-full h-full object-cover" height="350"
-                src="{{ asset('images/mobile.webp') }}"
-                width="400" loading="eager" fetchpriority="high" />
-              <div aria-hidden="true" class="absolute flex-col top-2 right-3 rounded-md">
-              <div class="bg-red-500 p-2 mb-[5px]">
-               <a href="https://www.instagram.com/hanzmanagement_/?igsh=MXVhMGxhdnFkdmVxMw%3D%3D#" class="mb-[10px]">
-                         <svg class="w-[25px] h-[25px] text-white" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-               </a>
-              </div>
-              <div class="bg-black p-2 text-white">
-                 <a href="https://www.tiktok.com/@hanzmanagement?_t=ZS-8zToKwFMvwW&_r=1">
-                          <svg class="w-[25px] h-[25px] text-white" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
-                 </a>
-              </div>
-            </div>
-            <div class="absolute bottom-1 left-1 sm:bottom-2 sm:left-2 bg-white rounded-lg px-2 py-2 flex items-center space-x-2 shadow-md max-w-max">
-                <div class="text-xs font-semibold">
-                    <p class="leading-none text-[10px]">Content terupdate</p>
-                </div>
-            </div>
-        </div>
-        <div class="relative rounded-lg overflow-hidden sm:col-span-1 sm:row-span-1">
-            <img alt="Hanz Management | Agency Spg & Event Organizer"
-                class="w-full h-full object-cover" height="170" loading="lazy"
-                src="{{ asset('images/img-hero(2).avif') }}"
-                width="400" />
-        </div>
-        <div class="relative sm:rounded-br-lg overflow-hidden sm:col-span-1 sm:row-span-1">
-            <img alt="Hanz Management | Agency Spg & Event Organizer"
-                class="w-full h-full object-cover rounded-[10px] sm:rounded-tr-[40px]" height="350" loading="lazy"
-                src="{{ asset('images/img-hero.webp') }}" width="400" />
-        </div>
-       <div
-            class="rounded-lg sm:h-[250px] flex flex-col justify-between text-sm font-semibold sm:col-span-2 sm:rounded-tr-[40px] sm:rounded-bl-none rounded-bl-[40px]">
-            <div class="flex overflow-hidden h-[100%] rounded-[10px] sm:rounded-tl-[40px]">
-                <img src="{{ asset('images/img-hero(1).avif') }}" class="w-full object-cover object-[center_10%]"
-                    width="700" height="100%" alt="Hanz Management | Agency Spg & Event Organizer" loading="lazy" />
-            </div>
-        </div>
+    <main class="bg-transparent text-[#0B0E1E]">
+  <!-- Hero Section -->
+<section class="w-full">
+<div class="lg:grid flex flex-col-reverse lg:grid-cols-2 gap-6 lg:gap-24 items-center">
+<!-- Left Column: Content -->
+<div class="flex flex-col gap-6 items-start">
+<h1 class="text-[2rem] md:text-[3.5rem] leading-[2.5rem] md:leading-[4.70rem] font-extrabold tracking-tight lg:max-w-md"">
+                    Agency Spg &amp; <br class="hidden md:block"/>Event Organizer <br class="hidden md:block"/>Terbaik di <br class="hidden md:block"/>Indonesia
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    kami hadir untuk memenuhi kebutuhan perusahaan anda baik dari segi Jasa Penyedia Manpower, pengadaan barang, produksi property event. decoration, baik untuk promosi maupun entertainment.
+                </p>
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-8 py-4 rounded-full hover:bg-on-primary-fixed-variant transition-all duration-300 shadow-md hover:shadow-lg mt-4 active:scale-95" href="#about">
+                    Lihat Selengkapnya
+</a>
+</div>
+<!-- Right Column: Image Grid -->
+<div class="relative sm:h-[600px] w-full rounded-3xl py-2 sm:py-4">
+<div class="grid grid-cols-2 sm:grid-cols-12 sm:grid-rows-6 gap-4 h-full">
+
+    <!-- Main Image -->
+    <div class=" md:flex hidden
+        col-span-2
+        sm:col-span-5 sm:row-span-6
+        h-72 sm:h-auto
+        relative rounded-2xl overflow-hidden
+        shadow-[0_10px_15px_-3px_rgba(15,23,42,0.05)]
+        hover:-translate-y-1 transition-transform duration-300
+    ">
+<!-- Floating Social Icons -->
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+
+    <!-- Instagram -->
+    <a
+        href="https://www.instagram.com/hanzmanagement_/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram Hanz Management"
+        class="w-10 h-10 bg-[#E1306C] rounded-lg flex items-center justify-center text-white shadow-md hover:scale-110 transition-transform"
+    >
+        <svg
+            class="w-5 h-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+        </svg>
+    </a>
+
+    <!-- TikTok -->
+    <a
+        href="https://www.tiktok.com/@hanzmanagement"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="TikTok Hanz Management"
+        class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white shadow-md hover:scale-110 transition-transform"
+    >
+        <svg
+            class="w-5 h-5"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+        >
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.15h-3.39v13.73a2.91 2.91 0 1 1-2-2.77V10a6.32 6.32 0 1 0 5.39 6.27V9.32a8.16 8.16 0 0 0 3.77.92V6.69Z"/>
+        </svg>
+    </a>
+
+</div>
+        <img
+            class="w-full h-full object-cover"
+            src="{{ asset('images/hero-content.png') }}"
+        />
     </div>
 
-    <!-- Kolom teks -->
-    <div class="order-2 md:order-2 lg:order-1 flex flex-col space-y-6 w-full">
-        <h1 class="text-[2rem] md:text-[3.5rem] leading-[2.5rem] md:leading-[4.70rem] font-extrabold tracking-tight lg:max-w-md">
-            Agency Spg & Event Organizer Terbaik di Indonesia
-        </h1>
-        <p class="text-[#6B7280] text-base max-w-md leading-relaxed">
-           kami hadir untuk memenuhi kebutuhan perusahaan anda baik dari segi Jasa Penyedia Manpower, pengadaan barang, produksi property event. decoration, baik untuk promosi maupun entertainment.
-        </p>
-        <div class="flex flex-wrap gap-4">
-            <a href="#about" class="inline-flex items-center gap-2 bg-[#4F46E5] text-white rounded-full px-6 py-3 text-sm font-semibold hover:bg-indigo-600 min-w-[140px]">
-                Lihat Selengkapnya
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-            </a>
-        </div>
+    <!-- Top Right Image -->
+    <div class="
+        col-span-1
+        sm:col-span-7 sm:row-span-3
+        h-48 sm:h-auto
+        rounded-2xl overflow-hidden
+        shadow-[0_10px_15px_-3px_rgba(15,23,42,0.05)]
+        hover:-translate-y-1 transition-transform duration-300
+    ">
+        <img
+            class="w-full h-full object-cover"
+            src="{{ asset('images/img-hero(2).avif') }}"
+        />
     </div>
-    </section>
-  
+
+    <!-- Middle Right Image -->
+    <div class="
+        col-span-1
+        sm:col-span-3 sm:row-span-3
+        h-48 sm:h-auto
+        rounded-2xl overflow-hidden
+        shadow-[0_10px_15px_-3px_rgba(15,23,42,0.05)]
+        hover:-translate-y-1 transition-transform duration-300
+    ">
+        <img
+            class="w-full h-full object-cover"
+            src="{{ asset('images/img-hero.webp') }}"
+        />
+    </div>
+
+    <!-- Bottom Right Image -->
+    <div class="
+        col-span-2
+        sm:col-span-4 sm:row-span-3
+        h-48 sm:h-auto
+        rounded-2xl overflow-hidden
+        shadow-[0_10px_15px_-3px_rgba(15,23,42,0.05)]
+        hover:-translate-y-1 transition-transform duration-300
+    ">
+        <img
+            class="w-full h-full object-cover"
+            src="{{ asset('images/img-hero(1).avif') }}"
+        />
+    </div>
+
+</div>
+</div>
+</div>
+</section>
+
   <!-- ===== section detail ==== -->
-  <section class="max-w-7xl mx-auto px-6 mt-12">
+  <section data-aos="fade-up" class="w-full mt-12">
     <div
         class="bg-[#4F46E5] text-white rounded-tr-[40px] rounded-bl-[40px] py-12 px-4 grid grid-cols-4 gap-6">
         
@@ -209,8 +271,8 @@
     </section>
 
     <!-- ====== about section ========= -->
-    <section class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-[45px] py-6 mt-6 md:py-12" id="about">
-      <img src="{{asset('images/about.webp')}}" alt="Hanz Management" loading="lazy" width="948" height="733">
+    <section data-aos="fade-up" class="w-full grid grid-cols-1 lg:grid-cols-2 gap-[45px] py-6 mt-6 md:py-12" id="about">
+      <img src="{{asset('images/about.png')}}" alt="Hanz Management" loading="lazy" width="948" height="733">
     <div class="mt-2 md:mt-0">
      <h1 class="text-2xl sm:text-3xl font-extrabold mb-2 leading-tight">
       Tentang Kami
@@ -226,7 +288,7 @@
     </section>
 
     <!-- =======  Why chose me detail ========== -->
-    <section class="max-w-7xl mx-auto px-6 py-6 md:py-12">
+    <section data-aos="fade-up" class="w-full py-6 md:py-12">
     <div class="flex flex-col md:flex-row md:flex-wrap md:gap-x-20 gap-y-10">
       <div class="flex-wrap flex gap-4 justify-between w-full">
       <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1a1a1a] md:w-1/3 leading-tight">
@@ -317,7 +379,7 @@
   <!-- ==== end ===== -->
 
    <!-- ====== our service ======= -->
-  <section class="max-w-7xl mx-auto px-6 py-6 md:py-12" id="service">
+  <section data-aos="fade-up" class="w-full py-6 md:py-12" id="service">
   <div class="max-w-3xl">
     <h2 class="text-3xl mb-5 sm:text-3xl md:text-4xl font-extrabold text-[#1a1a1a] md:w-1/3 leading-tight">
       Layanan Kami
@@ -332,62 +394,75 @@
      Kami menyediakan berbagai layanan
      <br/>
      Strategic Marketing
+    <div class="mt-4">
+    <a href="{{ route('services') }}"
+        class="inline-flex p-2 px-4 items-center gap-2 bg-[#4F46E5] text-white rounded-full md:px-8 px-1 md:py-3 py-2 md:sm text-[10px] font-semibold hover:bg-indigo-600 transition-colors">
+        Lihat Semua Layanan
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+    </a>
+    </div>
     </div>
    </div>
   <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
     
     <!-- Card 1 -->
-    <div class="bg-white shadow-md hover:bg-gray-200 rounded-[20px] pb-4">
+    <a href="{{ route('services.show', 'entertainment') }}"
+        class="group bg-white shadow-md hover:bg-gray-200 rounded-[20px] pb-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div class="flex justify-center mb-4 bg-white rounded-[20px] overflow-hidden">
-        <div class="flex h-[170px]  md:h-[200px] w-full items-center justify-center">
-          <img src="{{ asset('images/hiburan3.webp') }}" class="w-full h-full object-cover" loading="lazy" alt="Hanz management | Agency spg & Event Organizer">
+        <div class="flex h-[170px]  md:h-[200px] w-full items-center justify-center overflow-hidden">
+          <img src="{{ asset('images/hiburan3.webp') }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" alt="Layanan Entertainment Hanz Management">
         </div>
       </div>
-      <h2 class="font-bold text-lg sm:text-xl md:text-2xl text-center leading-snug text-[#1a1a1a]">
+      <h2 class="font-bold text-sm sm:text-xl md:text-2xl text-center leading-snug text-[#1a1a1a] group-hover:text-[#4F46E5]">
         Entertainment
       </h2>
-    </div>
+    </a>
 
     <!-- Card 2 -->
-    <div class="bg-white shadow-md hover:bg-gray-200 rounded-[20px] pb-4">
+    <a href="{{ route('services.show', 'promotion') }}"
+        class="group bg-white shadow-md hover:bg-gray-200 rounded-[20px] pb-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div class="flex justify-center mb-4 bg-white rounded-[20px] overflow-hidden">
-        <div class="flex h-[170px] md:h-[200px] w-full items-center justify-center">
-          <img src="{{ asset('images/service1.webp') }}" class="w-full h-full object-cover" loading="lazy" alt="Hanz management | Agency spg & Event Organizer">
+        <div class="flex h-[170px] md:h-[200px] w-full items-center justify-center overflow-hidden">
+          <img src="{{ asset('images/service1.webp') }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" alt="Layanan Promotion Hanz Management">
         </div>
       </div>
-      <h3 class="font-bold text-lg sm:text-xl md:text-2xl text-center leading-snug text-[#1a1a1a]">
+      <h3 class="font-bold text-sm sm:text-xl md:text-2xl text-center leading-snug text-[#1a1a1a] group-hover:text-[#4F46E5]">
         Promotion
       </h3>
-    </div>
+    </a>
 
     <!-- Card 3 -->
-    <div class="bg-white shadow-md hover:bg-gray-200 rounded-[20px] pb-4">
+    <a href="{{ route('services.show', 'event') }}"
+        class="group bg-white shadow-md hover:bg-gray-200 rounded-[20px] pb-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div class="flex justify-center mb-4 bg-white rounded-[20px] overflow-hidden">
-        <div class="flex h-[170px] md:h-[200px] w-full items-center justify-center">
-          <img src="{{ asset('images/img-hero(1).avif') }}" class="w-full h-full object-cover" loading="lazy" alt="Hanz management | Agency spg & Event Organizer">
+        <div class="flex h-[170px] md:h-[200px] w-full items-center justify-center overflow-hidden">
+          <img src="{{ asset('images/img-hero(1).avif') }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" alt="Layanan Event Hanz Management">
         </div>
       </div>
-      <h3 class="font-bold text-lg sm:text-xl md:text-2xl text-center leading-snug text-[#1a1a1a]">
+      <h3 class="font-bold text-sm sm:text-xl md:text-2xl text-center leading-snug text-[#1a1a1a] group-hover:text-[#4F46E5]">
         Event
       </h3>
-    </div>
+    </a>
 
     <!-- Card 4 -->
-    <div class="bg-white shadow-md hover:bg-gray-200 rounded-[20px] pb-4">
+    <a href="{{ route('services.show', 'production-branding') }}"
+        class="group bg-white shadow-md hover:bg-gray-200 rounded-[20px] pb-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div class="flex justify-center mb-4 bg-white rounded-[20px] overflow-hidden">
-        <div class="flex h-[170px] md:h-[200px] w-full items-center justify-center">
-          <img src="{{ asset('images/service4.webp') }}" class="w-full h-full object-cover" loading="lazy" alt="Hanz management | Agency spg & Event Organizer">
+        <div class="flex h-[170px] md:h-[200px] w-full items-center justify-center overflow-hidden">
+          <img src="{{ asset('images/service4.webp') }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" alt="Layanan Production & Branding Hanz Management">
         </div>
       </div>
-      <h3 class="font-bold text-lg sm:text-xl md:text-2xl text-center leading-snug text-[#1a1a1a]">
-         production & branding
+      <h3 class="font-bold text-sm sm:text-xl md:text-2xl text-center leading-snug text-[#1a1a1a] group-hover:text-[#4F46E5]">
+         Production & Branding
       </h3>
-    </div>
+    </a>
   </div>
   </section>
 
  <!-- ======= FAQ ======= -->
-  <section class="max-w-7xl mx-auto px-6 py-6 md:py-12" id="faq" >
+  <section data-aos="fade-up" class="w-full py-6 md:py-12" id="faq" >
     <h2 class="text-3xl sm:text-3xl md:text-4xl font-extrabold text-[#1a1a1a] md:w-1/3 leading-tight">Pertanyaan Umum (FAQ)</h2>
     <p class="text-gray-600 mb-8 mt-6">
       Butuh bantuan? Berikut jawaban cepat untuk pertanyaan yang sering diajukan tentang layanan SPG & event kami.
@@ -446,7 +521,7 @@
   </section>
 
   <!-- ======= portfolio ======= -->
-  <section id="portfolio" class="max-w-7xl mx-auto px-6 py-6 md:py-12">
+  <section data-aos="fade-up" id="portfolio" class="w-full py-6 md:py-12">
   <div class="flex justify-between py-6"> 
     <a href="/portfolio" 
        class="inline-block px-4 py-2 md:px-6 md:py-4 bg-blue-600 text-white text-sm rounded-3xl font-semibold hover:bg-blue-700 transition">
@@ -517,7 +592,7 @@
 </section>
    
   <!-- ======= our client ======== -->
-    <div class="max-w-7xl mx-auto px-6 py-6 md:py-12 text-center overflow-hidden" id="client">
+    <div data-aos="fade-up" class="w-full py-6 md:py-12 text-center overflow-hidden" id="client">
     <p class="text-black text-lg mb-6">Dipercaya oleh tim di</p>
     <div class="slider">
       @php
@@ -588,6 +663,14 @@
 @endsection
 
 @push('scripts')
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true
+        });
+    </script>
     <script>
         function toggleFaq(id) {
             const panel = document.getElementById(id);
