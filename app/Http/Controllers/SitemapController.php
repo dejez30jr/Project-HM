@@ -9,7 +9,7 @@ class SitemapController extends Controller
 {
     public function index()
     {
-        $base = url('/');
+        $base = rtrim((string) config('seo.canonical_base'), '/');
 
         $seo = new SeoData();
         $blog = new BlogData();

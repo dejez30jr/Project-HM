@@ -5,6 +5,36 @@
 
     RewriteEngine On
 
+    # 1) WWW -> NON-WWW (canonical) dengan 301
+    RewriteCond %{HTTP_HOST} ^www\.hanzmanagement\.com$ [NC]
+    RewriteRule ^(.*)$ https://hanzmanagement.com/$1 [L,R=301]
+
+    # 2) HTTP -> HTTPS (non-www) dengan 301
+    #    Kondisi !on mencakup HTTP murni; X-Forwarded-Proto mencegah loop saat
+    #    di belakang proxy/SSL terminator yang sudah menyediakan HTTPS.
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteCond %{HTTP_HOST} ^hanzmanagement\.com$ [NC]
+    RewriteRule ^(.*)$ https://hanzmanagement.com/$1 [L,R=301]
+
+    # 3) Bersihkan /public/index.php/<path> -> /<path>
+    #    Memakai %{THE_REQUEST} (request mentah klien) agar tidak cocok lagi
+    #    pada rewrite internal front-controller (index.php) di pass kedua.
+    RewriteCond %{THE_REQUEST} ^[A-Z]+\s+/public/index\.php/([^\s?]+) [NC]
+    RewriteRule ^ /%1 [L,R=301]
+
+    # 3b) /public/index.php (tanpa path tambahan) -> /
+    RewriteCond %{THE_REQUEST} ^[A-Z]+\s+/public/index\.php/?(\?[^\s]*)?\s [NC]
+    RewriteRule ^ / [L,R=301]
+
+    # 4) Bersihkan /index.php/<path> -> /<path>
+    RewriteCond %{THE_REQUEST} ^[A-Z]+\s+/index\.php/([^\s?]+) [NC]
+    RewriteRule ^ /%1 [L,R=301]
+
+    # 4b) /index.php (tanpa path tambahan) -> /
+    RewriteCond %{THE_REQUEST} ^[A-Z]+\s+/index\.php/?(\?[^\s]*)?\s [NC]
+    RewriteRule ^ / [L,R=301]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

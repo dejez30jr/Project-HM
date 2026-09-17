@@ -39,7 +39,7 @@
 
 @section('title', $meta['title'])
 @section('description', $meta['description'])
-@section('canonical', $activeCategory === 'all' ? route('portfolio') : route('portfolio', $activeCategory))
+@section('canonical', canonical_url($activeCategory === 'all' ? 'portfolio' : 'portfolio/' . $activeCategory))
 
 @section('schema')
     <script type="application/ld+json">
@@ -48,7 +48,7 @@
         "@graph": [
             {
                 "@type": "BreadcrumbList",
-                "@id": "{{ url()->current() }}#breadcrumb",
+                "@id": "{{ canonical_url() }}#breadcrumb",
                 "itemListElement": [
                     {
                         "@type": "ListItem",
@@ -72,7 +72,7 @@
             },
             {
                 "@type": "ItemList",
-                "@id": "{{ url()->current() }}#portfolio-list",
+                "@id": "{{ canonical_url() }}#portfolio-list",
                 "name": "Portofolio {{ $label }} Hanz Management",
                 "itemListElement": [
                     @foreach($images as $image)

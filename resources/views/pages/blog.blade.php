@@ -2,7 +2,7 @@
 
 @section('title', 'Blog & Artikel | Hanz Management')
 @section('description', 'Baca artikel dan panduan tentang jasa SPG, manpower event, brand activation, dan event organizer dari Hanz Management untuk membantu promosi brand Anda.')
-@section('canonical', route('blog'))
+@section('canonical', canonical_url('blog'))
 
 @section('schema')
     <script type="application/ld+json">
@@ -11,7 +11,7 @@
         "@graph": [
             {
                 "@type": "BreadcrumbList",
-                "@id": "{{ url()->current() }}#breadcrumb",
+                "@id": "{{ canonical_url() }}#breadcrumb",
                 "itemListElement": [
                     { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "{{ url('/') }}" },
                     { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ route('blog') }}" }
@@ -19,7 +19,7 @@
             },
             {
                 "@type": "Blog",
-                "@id": "{{ url()->current() }}#blog",
+                "@id": "{{ canonical_url() }}#blog",
                 "name": "Blog Hanz Management",
                 "url": "{{ route('blog') }}",
                 "blogPost": [

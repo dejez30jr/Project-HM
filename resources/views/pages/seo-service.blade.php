@@ -2,7 +2,7 @@
 
 @section('title', $service['meta_title'])
 @section('description', $service['meta_desc'])
-@section('canonical', url('/'.$service['slug']))
+@section('canonical', canonical_url($service['slug']))
 @section('og_title', $service['meta_title'])
 @section('og_description', $service['meta_desc'])
 @section('og_image', asset($service['image']))
@@ -14,7 +14,7 @@
         "@graph": [
             {
                 "@type": "BreadcrumbList",
-                "@id": "{{ url()->current() }}#breadcrumb",
+                "@id": "{{ canonical_url() }}#breadcrumb",
                 "itemListElement": [
                     { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "{{ url('/') }}" },
                     { "@type": "ListItem", "position": 2, "name": "Layanan", "item": "{{ route('services') }}" },
@@ -23,7 +23,7 @@
             },
             {
                 "@type": "Service",
-                "@id": "{{ url()->current() }}#service",
+                "@id": "{{ canonical_url() }}#service",
                 "name": "{{ $service['h1'] }}",
                 "description": "{{ $service['meta_desc'] }}",
                 "url": "{{ url('/'.$service['slug']) }}",

@@ -2,7 +2,7 @@
 
 @section('title', 'Hanz Management | Jasa SPG, Event Organizer & Manpower Terbaik di Indonesia')
 @section('description', 'Hanz Management adalah agency SPG & penyedia manpower di Bogor. Jasa SPG, SPB, event organizer, dekorasi, produksi event dan layanan promosi di seluruh Indonesia. Hubungi kami untuk kebutuhan SDM event Anda.')
-@section('canonical', url('/'))
+@section('canonical', canonical_url('/'))
 
 @push('styles')
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
@@ -118,10 +118,10 @@
 <div class="grid grid-cols-2 sm:grid-cols-12 sm:grid-rows-6 gap-4 h-full">
 
     <!-- Main Image -->
-    <div class=" md:flex hidden
-        col-span-2
+    <div class="flex
+        col-span-1
         sm:col-span-5 sm:row-span-6
-        h-72 sm:h-auto
+        h-48 sm:h-auto
         relative rounded-2xl overflow-hidden
         shadow-[0_10px_15px_-3px_rgba(15,23,42,0.05)]
         hover:-translate-y-1 transition-transform duration-300
@@ -209,7 +209,7 @@
 
     <!-- Bottom Right Image -->
     <div class="
-        col-span-2
+        col-span-1
         sm:col-span-4 sm:row-span-3
         h-48 sm:h-auto
         rounded-2xl overflow-hidden
@@ -280,7 +280,7 @@
      <p class="md:text-lg text-gray-600 mb-6 leading-relaxed">
        Hanz Management merupakan perusahaan penyedia jasa agency yang menyediakan banyak SDM terlatih yang berkompetensi dan mempunyai dedikasi penuh, yang berbasis di Kota bogor dan memiliki sumber daya yang tersebar di seluruh kota di Indonesia, kami hadir untuk memenuhi kebutuhan perusahaan anda baik dari segi Jasa Penyedia Manpower, pengadaan barang, produksi property event. decoration, dll baik untuk promosi maupun entertainment.
      </p>
-     <a class="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-blue-700 transition" href="#">
+     <a class="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-blue-700 transition" href="https://wa.me/6282110040066">
       Kontak Kami
       <svg class="w-3.5 h-3.5 ml-2" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"/></svg>
       </a>
@@ -379,24 +379,23 @@
   <!-- ==== end ===== -->
 
    <!-- ====== our service ======= -->
-  <section data-aos="fade-up" class="w-full py-6 md:py-12" id="service">
-  <div class="max-w-3xl">
+  <section data-aos="fade-up" class="bg-red-400 overflow-hidden rounded-2xl w-full p-4 py-6 md:py-12 mt-5 mb-5" id="service" style="background-image:url('{{ asset('images/img-hero.webp') }}');background-color:#f87171;background-size:cover;background-position:center;background-attachment:fixed;">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-black/50 rounded-lg">
+    </div>
+  <!-- <div class="max-w-3xl">
     <h2 class="text-3xl mb-5 sm:text-3xl md:text-4xl font-extrabold text-[#1a1a1a] md:w-1/3 leading-tight">
       Layanan Kami
     </h2>
-  </div>
+  </div> -->
    <!-- banner -->
-   <div class="relative rounded-[30px] overflow-hidden h-40 sm:h-48 md:h-56">
-    <img alt="Tim Hanz Management sedang bekerja di kantor" class="w-full h-full object-cover" src="{{ asset('images/img-hero.webp') }}"/>
-    <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-black/30 rounded-lg">
-    </div>
-    <div class="absolute flex w-full justify-between flex-wrap p-4 bottom-4 right-0 text-white text-[15px] sm:text-[22px] md:text-[24px] font-normal leading-snug">
+   <div class="z-10 relative ">
+    <div class="mb-10 flex w-full justify-between flex-wrap text-white text-[15px] text-[22px] md:text-[40px] font-semibold leading-snug">
      Kami menyediakan berbagai layanan
      <br/>
      Strategic Marketing
-    <div class="mt-4">
+    <div class="mt-4 md:mt-0">
     <a href="{{ route('services') }}"
-        class="inline-flex p-2 px-4 items-center gap-2 bg-[#4F46E5] text-white rounded-full md:px-8 px-1 md:py-3 py-2 md:text-lg text-[10px] font-semibold hover:bg-indigo-600 transition-colors">
+        class="inline-flex p-2 px-4 items-center gap-2 bg-[#4F46E5] text-white rounded-full md:px-8 px-1 md:py-3 py-2 md:text-sm text-[10px] font-semibold hover:bg-indigo-600 transition-colors">
         Lihat Semua Layanan
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -405,58 +404,78 @@
     </div>
     </div>
    </div>
-  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+  <div class="relative grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-8">
     
     <!-- Card 1 -->
-    <a href="{{ route('services.show', 'entertainment') }}"
-        class="group bg-white shadow-md hover:bg-gray-200 rounded-[20px] pb-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <div class="flex justify-center mb-4 bg-white rounded-[20px] overflow-hidden">
-        <div class="flex h-[170px]  md:h-[200px] w-full items-center justify-center overflow-hidden">
-          <img src="{{ asset('images/hiburan3.webp') }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" alt="Layanan Entertainment Hanz Management">
+      <a href="{{ route('services.show', 'promotion') }}"
+        class="group relative h-[200px] shadow-md rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <div class="flex justify-center mb-4 h-full bg-white/50 rounded-[20px] overflow-hidden">
+        <div class="absolute -bottom-16 -left-16 w-[160px] h-40 bg-white/20 rounded-[20px]"></div>
+        <div class="absolute top-4 right-4 w-12 h-12 bg-[#7ed6fb]/30 rounded-full"></div>
+        <div class="absolute bottom-4 right-4 w-8 h-8 bg-white/50 rounded-full"></div>
+        <div class="relative z-40 flex items-center justify-center w-full h-full">
+          <svg class="w-12 h-12 text-[#4F46E5]" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
         </div>
       </div>
-      <h2 class="font-bold text-sm sm:text-xl md:text-2xl text-center leading-snug text-[#1a1a1a] group-hover:text-[#4F46E5]">
+      <div class="absolute top-1 left-1">
+      <h3 class="bg-white text-sm md:lg line-clamp-1 rounded-[20px] px-4 py-1">
         Entertainment
-      </h2>
+      </h3>
+      </div>
     </a>
 
-    <!-- Card 2 -->
+    <!-- Card 2 --> 
     <a href="{{ route('services.show', 'promotion') }}"
-        class="group bg-white shadow-md hover:bg-gray-200 rounded-[20px] pb-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <div class="flex justify-center mb-4 bg-white rounded-[20px] overflow-hidden">
-        <div class="flex h-[170px] md:h-[200px] w-full items-center justify-center overflow-hidden">
-          <img src="{{ asset('images/service1.webp') }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" alt="Layanan Promotion Hanz Management">
+        class="group relative h-[200px] shadow-md rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <div class="flex justify-center mb-4 h-full bg-white/50 rounded-[20px] overflow-hidden">
+        <div class="absolute -bottom-16 -left-16 w-[160px] h-40 bg-white/20 rounded-[20px]"></div>
+        <div class="absolute top-4 right-4 w-12 h-12 bg-[#7ed6fb]/30 rounded-full"></div>
+        <div class="absolute bottom-4 right-4 w-8 h-8 bg-white/50 rounded-full"></div>
+        <div class="relative z-40 flex items-center justify-center w-full h-full">
+          <svg class="w-12 h-12 text-[#4F46E5]" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
         </div>
       </div>
-      <h3 class="font-bold text-sm sm:text-xl md:text-2xl text-center leading-snug text-[#1a1a1a] group-hover:text-[#4F46E5]">
+      <div class="absolute top-1 left-1">
+      <h3 class="bg-white text-sm md:lg line-clamp-1 rounded-[20px] px-4 py-1">
         Promotion
       </h3>
+      </div>
     </a>
 
     <!-- Card 3 -->
     <a href="{{ route('services.show', 'event') }}"
-        class="group bg-white shadow-md hover:bg-gray-200 rounded-[20px] pb-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <div class="flex justify-center mb-4 bg-white rounded-[20px] overflow-hidden">
-        <div class="flex h-[170px] md:h-[200px] w-full items-center justify-center overflow-hidden">
-          <img src="{{ asset('images/img-hero(1).avif') }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" alt="Layanan Event Hanz Management">
+        class="group relative h-[200px] shadow-md rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <div class="flex justify-center mb-4 h-full bg-white/50 rounded-[20px] overflow-hidden">
+        <div class="absolute -bottom-16 -left-16 w-[160px] h-40 bg-white/20 rounded-[20px]"></div>
+        <div class="absolute top-4 right-4 w-12 h-12 bg-[#7ed6fb]/30 rounded-full"></div>
+        <div class="absolute bottom-4 right-4 w-8 h-8 bg-white/50 rounded-full"></div>
+        <div class="relative z-40 flex items-center justify-center w-full h-full">
+          <svg class="w-12 h-12 text-[#4F46E5]" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         </div>
       </div>
-      <h3 class="font-bold text-sm sm:text-xl md:text-2xl text-center leading-snug text-[#1a1a1a] group-hover:text-[#4F46E5]">
+      <div class="absolute top-1 left-1">
+      <h3 class="bg-white text-sm md:lg line-clamp-1 rounded-[20px] px-4 py-1">
         Event
       </h3>
+      </div>
     </a>
 
     <!-- Card 4 -->
     <a href="{{ route('services.show', 'production-branding') }}"
-        class="group bg-white shadow-md hover:bg-gray-200 rounded-[20px] pb-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <div class="flex justify-center mb-4 bg-white rounded-[20px] overflow-hidden">
-        <div class="flex h-[170px] md:h-[200px] w-full items-center justify-center overflow-hidden">
-          <img src="{{ asset('images/service4.webp') }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" alt="Layanan Production & Branding Hanz Management">
+        class="group relative h-[200px] shadow-md rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <div class="flex justify-center mb-4 h-full bg-white/50 rounded-[20px] overflow-hidden">
+        <div class="absolute -bottom-16 -left-16 w-[160px] h-40 bg-white/20 rounded-[20px]"></div>
+        <div class="absolute top-4 right-4 w-12 h-12 bg-[#7ed6fb]/30 rounded-full"></div>
+        <div class="absolute bottom-4 right-4 w-8 h-8 bg-white/50 rounded-full"></div>
+        <div class="relative z-40 flex items-center justify-center w-full h-full">
+          <svg class="w-12 h-12 text-[#4F46E5]" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
         </div>
       </div>
-      <h3 class="font-bold text-sm sm:text-xl md:text-2xl text-center leading-snug text-[#1a1a1a] group-hover:text-[#4F46E5]">
+      <div class="absolute top-1 left-1">
+      <h3 class="bg-white text-sm md:lg line-clamp-1 rounded-[20px] px-4 py-1">
          Production & Branding
       </h3>
+      </div>
     </a>
   </div>
   </section>
@@ -521,73 +540,20 @@
   </section>
 
   <!-- ======= portfolio ======= -->
-  <section data-aos="fade-up" id="portfolio" class="w-full py-6 md:py-12">
-  <div class="flex justify-between py-6"> 
+  <section data-aos="fade-up" id="portfolio" class="relative overflow-hidden bg-[#4F46E5] rounded-2xl w-full p-5 mt-4 mb-4 md:p-10">
+    <div class="absolute -bottom-16 -left-16 w-[160px] h-40 bg-white/20 rounded-[20px]"></div>
+    <div class="absolute top-4 right-4 w-12 h-12 bg-[#7ed6fb]/30 rounded-full"></div>
+    <div class="absolute bottom-4 right-4 w-8 h-8 bg-white/50 rounded-full"></div>
+  <div class="relative z-40 flex justify-center py-6"> 
     <a href="/portfolio" 
-       class="inline-block px-4 py-2 md:px-6 md:py-4 bg-blue-600 text-white text-sm rounded-3xl font-semibold hover:bg-blue-700 transition">
-    Semua
+       class="inline-block px-4 py-2 md:px-6 md:py-4 bg-white/20 text-white text-sm rounded-3xl font-semibold hover:bg-blue-700 transition">
+    Lihat Semua Proyek
     </a>
-      <div class="flex items-center gap-2">
-           <svg class="w-4 h-4 inline-block" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128z"/></svg><div class="w-[60px] md:w-[200px] bg-gray-400 h-[1px]"></div>
-          <p class="text-sm">Proyek Kami</p>
-      </div>
   </div>
-  <div class="flex justify-end text-right mb-8 w-full">
-  <h2 class="text-3xl sm:text-3xl md:text-4xl font-extrabold text-[#1a1a1a] md:w-1/3 leading-tight">
+  <div class="relative z-40 flex justify-center mb-8 w-full">
+  <h2 class="text-3xl sm:text-3xl md:text-4xl text-center font-extrabold text-white md:w-1/3 leading-tight">
     Proyek Kreatif Kami Bersama Brand
   </h2>
-  </div>
-
-  <!-- Grid 4 Card -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-    <!-- Card 1 -->
-    <div class="bg-white shadow-lg rounded-3xl overflow-hidden">
-      <img src="{{ asset('images/hiburan3.webp') }}" alt="Agency Spg & Event Organizer" class="w-full object-cover">
-   <div class="flex-wrap flex justify-between items-center p-4 text-base sm:text-lg text-slate-800 font-semibold">
-        Fashion Hotel
-        <div class="rounded-3xl text-sm p-2 px-4 bg-blue-300">
-        <a class="truncate" href="{{ route('portfolio', 'entertaiment') }}">
-              Lihat Hasil
-        </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white shadow-md rounded-3xl overflow-hidden">
-      <img src="{{ asset('images/promosi7.jpeg') }}" alt="Agency Spg & Event Organizer" class="w-full object-cover">
-      <div class="flex-wrap flex justify-between items-center p-4 text-base sm:text-lg text-slate-800 font-semibold">
-        <h3>Gojek</h3>
-        <div class="rounded-3xl text-sm p-2 px-4 bg-blue-300">
-          <a class="truncate" href="{{ route('portfolio', 'event') }}">
-              Lihat Hasil
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white shadow-md rounded-3xl overflow-hidden">
-      <img src="{{ asset('images/event3.webp') }}" alt="Agency Spg & Event Organizer" class="w-full object-cover">
-      <div class="flex-wrap flex justify-between items-center p-4 text-base sm:text-lg text-slate-800 font-semibold">
-        <h3>Omela</h3>
-        <div class="rounded-3xl text-sm p-2 px-4 bg-blue-300">
-          <a class="truncate" href="{{ route('portfolio', 'promotion') }}">
-              Lihat Hasil
-          </a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="bg-white shadow-md rounded-3xl overflow-hidden">
-      <img src="{{ asset('images/produk1.webp') }}" alt="Agency Spg & Event Organizer" class="w-full object-cover">
-      <div class="flex-wrap flex justify-between items-center p-4 text-base sm:text-lg text-slate-800 font-semibold">
-        <h3>OT Group</h3>
-        <div class="rounded-3xl text-sm p-2 px-4 bg-blue-300">
-          <a class="truncate" href="{{ route('portfolio', 'production') }}">
-              Lihat Hasil
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
    

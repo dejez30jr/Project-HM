@@ -2,7 +2,7 @@
 
 @section('title', $location['meta_title'])
 @section('description', $location['meta_desc'])
-@section('canonical', url('/'.$location['slug']))
+@section('canonical', canonical_url($location['slug']))
 @section('og_title', $location['meta_title'])
 @section('og_description', $location['meta_desc'])
 @section('og_image', asset('images/service1.webp'))
@@ -14,7 +14,7 @@
         "@graph": [
             {
                 "@type": "BreadcrumbList",
-                "@id": "{{ url()->current() }}#breadcrumb",
+                "@id": "{{ canonical_url() }}#breadcrumb",
                 "itemListElement": [
                     { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "{{ url('/') }}" },
                     { "@type": "ListItem", "position": 2, "name": "Jasa SPG", "item": "{{ url('/'.'jasa-spg') }}" },
@@ -23,7 +23,7 @@
             },
             {
                 "@type": "Service",
-                "@id": "{{ url()->current() }}#service",
+                "@id": "{{ canonical_url() }}#service",
                 "name": "Jasa SPG {{ $location['city'] }}",
                 "description": "{{ $location['meta_desc'] }}",
                 "url": "{{ url('/'.$location['slug']) }}",

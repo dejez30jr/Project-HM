@@ -2,7 +2,7 @@
 
 @section('title', $post['title'] . ' | Hanz Management')
 @section('description', $post['meta_desc'])
-@section('canonical', route('blog.show', $post['slug']))
+@section('canonical', canonical_url('blog/' . $post['slug']))
 @section('og_title', $post['title'] . ' | Hanz Management')
 @section('og_description', $post['meta_desc'])
 @section('og_image', asset('images/img-hero.webp'))
@@ -14,7 +14,7 @@
         "@graph": [
             {
                 "@type": "BreadcrumbList",
-                "@id": "{{ url()->current() }}#breadcrumb",
+                "@id": "{{ canonical_url() }}#breadcrumb",
                 "itemListElement": [
                     { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "{{ url('/') }}" },
                     { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ route('blog') }}" },
@@ -23,7 +23,7 @@
             },
             {
                 "@type": "BlogPosting",
-                "@id": "{{ url()->current() }}#post",
+                "@id": "{{ canonical_url() }}#post",
                 "headline": "{{ $post['title'] }}",
                 "description": "{{ $post['meta_desc'] }}",
                 "datePublished": "{{ date('Y-m-d') }}",

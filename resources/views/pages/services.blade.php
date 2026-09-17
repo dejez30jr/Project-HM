@@ -2,7 +2,7 @@
 
 @section('title', 'Layanan Kami | Hanz Management')
 @section('description', 'Layanan Hanz Management: entertainment, promosi (SPG & brand activation), event organizer, serta produksi & branding. Penyedia SDM dan jasa event terbaik untuk brand di seluruh Indonesia.')
-@section('canonical', route('services'))
+@section('canonical', canonical_url('services'))
 
 @section('schema')
     <script type="application/ld+json">
@@ -11,7 +11,7 @@
         "@graph": [
             {
                 "@type": "BreadcrumbList",
-                "@id": "{{ url()->current() }}#breadcrumb",
+                "@id": "{{ canonical_url() }}#breadcrumb",
                 "itemListElement": [
                     {
                         "@type": "ListItem",
@@ -29,7 +29,7 @@
             },
             {
                 "@type": "ItemList",
-                "@id": "{{ url()->current() }}#service-list",
+                "@id": "{{ canonical_url() }}#service-list",
                 "name": "Layanan Hanz Management",
                 "itemListElement": [
                     @foreach($services as $service)

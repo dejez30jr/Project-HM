@@ -10,7 +10,7 @@
     <meta name="keywords" content="jasa SPG, agency SPG, manpower, event organizer Bogor, jasa event organizer, dekorasi event, penyedia SDM, SPG Bogor, Hanz Management">
     <meta name="author" content="Hanz Management">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="@yield('canonical', url()->current())">
+    <link rel="canonical" href="@yield('canonical', canonical_url())">
 
     <meta name="geo.region" content="ID-JB">
     <meta name="geo.placename" content="Bogor">
@@ -23,7 +23,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="@yield('og_title', 'Hanz Management | Jasa SPG, Event Organizer & Manpower Terbaik di Indonesia')">
     <meta property="og:description" content="@yield('og_description', 'Agency SPG & penyedia manpower di Bogor, Indonesia. Jasa SPG, event organizer, dekorasi & produksi event untuk seluruh Indonesia.')">
-    <meta property="og:url" content="@yield('canonical', url()->current())">
+    <meta property="og:url" content="@yield('canonical', canonical_url())">
     <meta property="og:image" content="@yield('og_image', asset('images/img-hero.webp'))">
     <meta property="og:image:alt" content="Hanz Management | Agency SPG & Event Organizer">
 

@@ -4,7 +4,7 @@
     Layanan {{ $service['name'] }} | Hanz Management
 @endsection
 @section('description', $service['short'])
-@section('canonical', route('services.show', $service['slug']))
+@section('canonical', canonical_url('services/' . $service['slug']))
 @section('og_title')
     Layanan {{ $service['name'] }} | Hanz Management
 @endsection
@@ -18,7 +18,7 @@
         "@graph": [
             {
                 "@type": "BreadcrumbList",
-                "@id": "{{ url()->current() }}#breadcrumb",
+                "@id": "{{ canonical_url() }}#breadcrumb",
                 "itemListElement": [
                     {
                         "@type": "ListItem",
@@ -42,7 +42,7 @@
             },
             {
                 "@type": "Service",
-                "@id": "{{ url()->current() }}#service",
+                "@id": "{{ canonical_url() }}#service",
                 "name": "Layanan {{ $service['name'] }}",
                 "alternateName": "{{ $service['short'] }}",
                 "description": "{{ $service['desc'] }}",
@@ -135,14 +135,109 @@
                 </h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
                     @foreach($service['portfolios'] as $portfolio)
-                    <div class="rounded-[20px] overflow-hidden shadow-md">
+                    <button type="button" onclick="openPortfolio({{ $loop->index }})"
+                        class="group relative w-full text-left rounded-[20px] overflow-hidden shadow-md cursor-pointer"
+                        style="cursor:zoom-in" aria-label="Klik untuk memperbesar foto portofolio">
                         <img src="{{ asset($portfolio) }}" loading="lazy" decoding="async"
-                            class="w-full h-52 sm:h-56 md:h-64 object-cover hover:scale-105 transition-transform duration-500"
+                            class="w-full h-52 sm:h-56 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                             alt="Portofolio {{ $service['name'] }} Hanz Management" />
-                    </div>
+                        <span
+                            class="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-[#4F46E5] text-white flex items-center justify-center pointer-events-none">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                        </span>
+                    </button>
                     @endforeach
+                </div>
+
+                <div id="galleryModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50 p-4" role="dialog" aria-modal="true" aria-label="Galeri foto portofolio">
+                    <button type="button" id="galleryClose"
+                        class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 text-white flex items-center justify-center hover:scale-110 transition-transform"
+                        aria-label="Tutup">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <div class="flex items-center justify-center gap-3 md:gap-6 w-full">
+                        <button type="button" id="galleryPrev"
+                            class="shrink-0 w-10 h-10 rounded-full bg-white/20 text-white flex items-center justify-center hover:scale-110 transition-transform"
+                            aria-label="Foto sebelumnya">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+                        </button>
+                        <div class="rounded-2xl overflow-hidden shadow-lg bg-black flex items-center justify-center">
+                            <img id="galleryImg" src="" alt="Foto portofolio diperbesar" style="max-height:85vh;max-width:100%;object-fit:contain;" />
+                        </div>
+                        <button type="button" id="galleryNext"
+                            class="shrink-0 w-10 h-10 rounded-full bg-white/20 text-white flex items-center justify-center hover:scale-110 transition-transform"
+                            aria-label="Foto berikutnya">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 @endsection
+
+@push('scripts')
+    <script>
+        (function () {
+            const images = [
+                @foreach($service['portfolios'] as $portfolio)
+                { src: "{{ asset($portfolio) }}", alt: "Portofolio {{ $service['name'] }} Hanz Management" },
+                @endforeach
+            ];
+            const modal = document.getElementById('galleryModal');
+            const img = document.getElementById('galleryImg');
+            const prevBtn = document.getElementById('galleryPrev');
+            const nextBtn = document.getElementById('galleryNext');
+            const closeBtn = document.getElementById('galleryClose');
+            let index = 0;
+
+            function render() {
+                if (!images.length) return;
+                img.src = images[index].src;
+                img.alt = images[index].alt;
+            }
+
+            function openModal(i) {
+                if (!images.length) return;
+                index = i;
+                render();
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+
+            function next() {
+                index = (index + 1) % images.length;
+                render();
+            }
+
+            function prev() {
+                index = (index - 1 + images.length) % images.length;
+                render();
+            }
+
+            window.openPortfolio = openModal;
+
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            if (prevBtn) prevBtn.addEventListener('click', prev);
+            if (nextBtn) nextBtn.addEventListener('click', next);
+            if (modal) {
+                modal.addEventListener('click', function (e) {
+                    if (e.target === modal) closeModal();
+                });
+            }
+            document.addEventListener('keydown', function (e) {
+                if (!modal || modal.classList.contains('hidden')) return;
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+            });
+        })();
+    </script>
+@endpush
