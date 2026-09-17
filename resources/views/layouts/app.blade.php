@@ -45,7 +45,8 @@
     <!-- Tailwind via Vite (dev hot reload / build) -->
     @vite(['resources/css/tailwind.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset('css/Beranda.css') }}" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"></noscript>
 
     @stack('styles')
 </head>

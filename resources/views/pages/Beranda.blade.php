@@ -5,7 +5,9 @@
 @section('canonical', canonical_url('/'))
 
 @push('styles')
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="preload" as="image" href="{{ asset('images/hero-content.webp') }}" fetchpriority="high">
+    <link rel="preload" as="style" href="https://unpkg.com/aos@2.3.4/dist/aos.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"></noscript>
 @endpush
 
 @section('schema')
@@ -173,7 +175,10 @@
 </div>
         <img
             class="w-full h-full object-cover"
-            src="{{ asset('images/hero-content.png') }}"
+            src="{{ asset('images/hero-content.webp') }}"
+            width="908" height="1732"
+            fetchpriority="high"
+            decoding="async"
         />
     </div>
 
@@ -189,6 +194,9 @@
         <img
             class="w-full h-full object-cover"
             src="{{ asset('images/img-hero(2).avif') }}"
+            width="908" height="1732"
+            fetchpriority="low"
+            decoding="async"
         />
     </div>
 
@@ -204,6 +212,9 @@
         <img
             class="w-full h-full object-cover"
             src="{{ asset('images/img-hero.webp') }}"
+            width="908" height="1732"
+            fetchpriority="low"
+            decoding="async"
         />
     </div>
 
@@ -219,6 +230,9 @@
         <img
             class="w-full h-full object-cover"
             src="{{ asset('images/img-hero(1).avif') }}"
+            width="908" height="1732"
+            fetchpriority="low"
+            decoding="async"
         />
     </div>
 
@@ -272,7 +286,7 @@
 
     <!-- ====== about section ========= -->
     <section data-aos="fade-up" class="w-full grid grid-cols-1 lg:grid-cols-2 gap-[45px] py-6 mt-6 md:py-12" id="about">
-      <img src="{{asset('images/about.png')}}" alt="Hanz Management" loading="lazy" width="948" height="733">
+      <img src="{{asset('images/about.webp')}}" alt="Hanz Management" loading="lazy" decoding="async" width="568" height="439">
     <div class="mt-2 md:mt-0">
      <h1 class="text-2xl sm:text-3xl font-extrabold mb-2 leading-tight">
       {{ __('Tentang Kami') }}
