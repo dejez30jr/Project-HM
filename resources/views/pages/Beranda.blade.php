@@ -417,8 +417,8 @@
           <svg class="w-12 h-12 text-[#4F46E5]" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
         </div>
       </div>
-      <div class="absolute top-1 left-1">
-      <h3 class="bg-white text-sm md:lg line-clamp-1 rounded-[20px] px-4 py-1">
+      <div class="absolute top-2 left-2 right-2">
+      <h3 class="bg-white text-sm md:lg line-clamp-1 w-[fit-content] rounded-[20px] px-4 py-1">
         Entertainment
       </h3>
       </div>
@@ -435,8 +435,8 @@
           <svg class="w-12 h-12 text-[#4F46E5]" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
         </div>
       </div>
-      <div class="absolute top-1 left-1">
-      <h3 class="bg-white text-sm md:lg line-clamp-1 rounded-[20px] px-4 py-1">
+      <div class="absolute top-2 left-2 right-2">
+      <h3 class="bg-white text-sm md:lg line-clamp-1 w-[fit-content] rounded-[20px] px-4 py-1">
         Promotion
       </h3>
       </div>
@@ -453,8 +453,8 @@
           <svg class="w-12 h-12 text-[#4F46E5]" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         </div>
       </div>
-      <div class="absolute top-1 left-1">
-      <h3 class="bg-white text-sm md:lg line-clamp-1 rounded-[20px] px-4 py-1">
+      <div class="absolute top-2 left-2 right-2">
+      <h3 class="bg-white text-sm md:lg line-clamp-1 w-[fit-content] rounded-[20px] px-4 py-1">
         Event
       </h3>
       </div>
@@ -471,8 +471,8 @@
           <svg class="w-12 h-12 text-[#4F46E5]" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
         </div>
       </div>
-      <div class="absolute top-1 left-1">
-      <h3 class="bg-white text-sm md:lg line-clamp-1 rounded-[20px] px-4 py-1">
+      <div class="absolute top-2 left-2 right-2">
+      <h3 class="bg-white text-sm md:lg line-clamp-1 w-[fit-content] rounded-[20px] px-4 py-1">
          Production & Branding
       </h3>
       </div>
