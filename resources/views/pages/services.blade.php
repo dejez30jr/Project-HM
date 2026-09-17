@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Layanan Kami | Hanz Management')
+@section('title')
+    {{ __('Layanan Kami') }} | Hanz Management
+@endsection
 @section('description', 'Layanan Hanz Management: entertainment, promosi (SPG & brand activation), event organizer, serta produksi & branding. Penyedia SDM dan jasa event terbaik untuk brand di seluruh Indonesia.')
 @section('canonical', canonical_url('services'))
 
@@ -61,18 +63,18 @@
         <div class="w-full pt-10 md:pt-16 pb-16 md:pb-20">
             <nav aria-label="Breadcrumb" class="text-sm text-gray-500 mb-10">
                 <ol class="flex flex-wrap items-center gap-x-2 gap-y-1">
-                    <li><a href="{{ url('/') }}" class="hover:underline">Beranda</a></li>
+                    <li><a href="{{ url('/') }}" class="hover:underline">{{ __('Beranda') }}</a></li>
                     <li><span aria-hidden="true">/</span></li>
-                    <li aria-current="page" class="text-[#4F46E5] font-medium">Layanan Kami</li>
+                    <li aria-current="page" class="text-[#4F46E5] font-medium">{{ __('Layanan Kami') }}</li>
                 </ol>
             </nav>
 
             <header class="max-w-2xl mb-14">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1a1a1a] leading-tight mb-5">
-                    Layanan Kami
+                    {{ __('Layanan Kami') }}
                 </h1>
                 <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
-                    Hanz Management menyediakan berbagai layanan strategic marketing untuk kebutuhan SDM dan event perusahaan Anda. Pilih layanan di bawah ini untuk melihat detail lengkapnya.
+                    {{ __('Hanz Management menyediakan berbagai layanan strategic marketing untuk kebutuhan SDM dan event perusahaan Anda. Pilih layanan di bawah ini untuk melihat detail lengkapnya.') }}
                 </p>
             </header>
 
@@ -88,13 +90,13 @@
                     </div>
                     <div class="flex flex-col flex-1 p-6">
                         <h2 class="font-bold text-lg sm:text-xl text-center leading-snug text-[#1a1a1a]">
-                            {{ $service['name'] }}
+                            {{ __($service['name']) }}
                         </h2>
                         <p class="text-sm text-gray-500 text-center mt-3 leading-relaxed flex-1">
-                            {{ $service['short'] }}
+                            {{ __($service['short']) }}
                         </p>
                         <span class="mt-6 inline-flex items-center justify-center w-full bg-[#4F46E5] text-white text-sm font-semibold py-3 rounded-full group-hover:bg-indigo-600 transition-colors">
-                            Lihat Detail
+                            {{ __('Lihat Detail') }}
                         </span>
                     </div>
                 </a>

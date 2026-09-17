@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Blog & Artikel | Hanz Management')
+@section('title')
+    {{ __('Blog & Artikel') }} | Hanz Management
+@endsection
 @section('description', 'Baca artikel dan panduan tentang jasa SPG, manpower event, brand activation, dan event organizer dari Hanz Management untuk membantu promosi brand Anda.')
 @section('canonical', canonical_url('blog'))
 
@@ -43,7 +45,7 @@
         <div class="w-full pt-10 md:pt-16 pb-16 md:pb-20">
             <nav aria-label="Breadcrumb" class="text-sm text-gray-500 mb-10">
                 <ol class="flex flex-wrap items-center gap-x-2 gap-y-1">
-                    <li><a href="{{ url('/') }}" class="hover:underline">Beranda</a></li>
+                    <li><a href="{{ url('/') }}" class="hover:underline">{{ __('Beranda') }}</a></li>
                     <li><span aria-hidden="true">/</span></li>
                     <li aria-current="page" class="text-[#4F46E5] font-medium">Blog</li>
                 </ol>
@@ -51,10 +53,10 @@
 
             <header class="max-w-3xl mb-14">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1a1a1a] leading-tight mb-5">
-                    Blog & Artikel
+                    {{ __('Blog & Artikel') }}
                 </h1>
                 <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
-                    Panduan dan wawasan seputar jasa SPG, manpower event, brand activation, dan event organizer untuk membantu Anda memaksimalkan promosi brand.
+                    {{ __('Panduan dan wawasan seputar jasa SPG, manpower event, brand activation, dan event organizer untuk membantu Anda memaksimalkan promosi brand.') }}
                 </p>
             </header>
 
@@ -73,7 +75,7 @@
                             {{ $post['excerpt'] }}
                         </p>
                         <span class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#4F46E5]">
-                            Baca Selengkapnya
+                            {{ __('Baca Selengkapnya') }}
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>

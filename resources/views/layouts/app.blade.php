@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,14 +52,14 @@
 <body>
     <!-- navbar -->
     <nav>
-    <header class="w-full mx-auto px-6 py-4 flex items-center justify-between sticky top-0 bg-white z-50">
+    <header class="w-full mx-auto px-6 lg:px-12 py-4 flex items-center justify-between sticky top-0 bg-white z-50">
     <div class="flex items-center space-x-2">
         <div class="w-[150px]">
         <img src="{{ asset('images/hm-logo.webp') }}" alt="Logo hanzmanagement" loading="eager" fetchpriority="high" class="w-full">
         </div>
     </div>
         <!-- Hamburger button for mobile -->
-        <button aria-expanded="false" aria-label="Toggle menu" class="md:hidden relative w-8 h-8 focus:outline-none"
+        <button aria-expanded="false" aria-label="Toggle menu" class="lg:hidden relative w-8 h-8 focus:outline-none"
             id="menu-btn">
             <span class="block absolute h-0.5 w-6 bg-black rounded left-1 top-2 transition-transform duration-300">
             </span>
@@ -68,32 +68,42 @@
             <span class="block absolute h-0.5 w-6 bg-black rounded left-1 top-6 transition-transform duration-300">
             </span>
         </button>
-        <nav class="hidden md:flex items-center space-x-6 text-md font-normal" id="menu">
+        <nav class="hidden lg:flex items-center space-x-6 text-md font-normal" id="menu">
             <a class="hover:underline whitespace-nowrap" href="/">
-                Home
+                {{ __('Home') }}
             </a>
             <a class="hover:underline whitespace-nowrap" href="/#about">
-                Tentang Kami
+                {{ __('Tentang Kami') }}
             </a>
             <div class="relative group">
                 <button aria-expanded="false" aria-haspopup="true"
                     class="flex items-center space-x-1 hover:underline focus:outline-none whitespace-nowrap">
                     <span>
                         <a href="{{ route('services') }}">
-                            Layanan
+                            {{ __('Layanan') }}
                         </a>
                     </span>
                 </button>
             </div>
             <a class="hover:underline whitespace-nowrap" href="/#portfolio">
-                Project Kami
+                {{ __('Project Kami') }}
             </a>
             <a class="hover:underline whitespace-nowrap" href="{{ route('blog') }}">
                 Blog
             </a>
             <a class="hover:underline whitespace-nowrap" href="#">
-                Kontak
+                {{ __('Kontak') }}
             </a>
+            <span
+                class="flex items-center gap-1 ms-2 ps-3 border-s-2 border-gray-200 text-sm font-medium whitespace-nowrap"
+                role="group" aria-label="Pilih bahasa">
+                <a href="{{ route('locale.switch', 'id') }}"
+                    class="px-2 py-1 rounded-md transition-colors {{ app()->getLocale() === 'id' ? 'bg-[#4F46E5] text-white' : 'text-gray-500 hover:bg-gray-100 hover:text-[#4F46E5]' }}"
+                    aria-label="Bahasa Indonesia">ID</a>
+                <a href="{{ route('locale.switch', 'en') }}"
+                    class="px-2 py-1 rounded-md transition-colors {{ app()->getLocale() === 'en' ? 'bg-[#4F46E5] text-white' : 'text-gray-500 hover:bg-gray-100 hover:text-[#4F46E5]' }}"
+                    aria-label="English">EN</a>
+            </span>
         </nav>
     </header>
     <!-- Mobile menu -->
@@ -122,22 +132,22 @@
         <ul class="px-6 py-4 space-y-4 text-base font-normal">
             <li>
                 <a class="block hover:underline" href="/#">
-                    Home
+                    {{ __('Home') }}
                 </a>
             </li>
             <li>
                 <a class="block hover:underline" href="/#about">
-                    Tentang Kami
+                    {{ __('Tentang Kami') }}
                 </a>
             </li>
             <li>
                 <a class="block hover:underline" href="{{ route('services') }}">
-                Layanan 
+                {{ __('Layanan') }} 
                 </a>
             </li>
             <li>
                 <a class="block hover:underline" href="/#portfolio">
-                  Project Kami
+                  {{ __('Project Kami') }}
                 </a>
             </li>
             <li>
@@ -147,10 +157,20 @@
             </li>
             <li>
                 <a class="block hover:underline" href="#">
-                    Kontak
+                    {{ __('Kontak') }}
                 </a>
             </li>
         </ul>
+        <div class="px-6 pb-6 pt-2 border-t border-gray-200">
+            <span class="flex items-center gap-1 text-sm font-medium" role="group" aria-label="Pilih bahasa">
+                <a href="{{ route('locale.switch', 'id') }}"
+                    class="px-2 py-1 rounded-md transition-colors {{ app()->getLocale() === 'id' ? 'bg-[#4F46E5] text-white' : 'text-gray-500' }}"
+                    aria-label="Bahasa Indonesia">ID</a>
+                <a href="{{ route('locale.switch', 'en') }}"
+                    class="px-2 py-1 rounded-md transition-colors {{ app()->getLocale() === 'en' ? 'bg-[#4F46E5] text-white' : 'text-gray-500' }}"
+                    aria-label="English">EN</a>
+            </span>
+        </div>
     </nav>
 
 

@@ -2,14 +2,14 @@
 
 @php
     $labels = [
-        'all' => 'Portofolio',
+        'all' => __('Portofolio'),
         'entertaiment' => 'Entertainment',
         'promotion' => 'Promotion',
         'event' => 'Event',
         'production' => 'Production',
     ];
 
-    $label = $labels[$activeCategory] ?? 'Portofolio';
+    $label = $labels[$activeCategory] ?? __('Portofolio');
 
     $meta = [
         'all' => [
@@ -98,12 +98,12 @@
         <div class="w-full pt-10 md:pt-16 pb-16 md:pb-20">
             <nav aria-label="Breadcrumb" class="text-sm text-gray-500 mb-10">
                 <ol class="flex flex-wrap items-center gap-x-2 gap-y-1">
-                    <li><a href="{{ url('/') }}" class="hover:underline">Beranda</a></li>
+                    <li><a href="{{ url('/') }}" class="hover:underline">{{ __('Beranda') }}</a></li>
                     <li><span aria-hidden="true">/</span></li>
                     @if($activeCategory === 'all')
-                        <li aria-current="page" class="text-[#4F46E5] font-medium">Portofolio</li>
+                        <li aria-current="page" class="text-[#4F46E5] font-medium">{{ __('Portofolio') }}</li>
                     @else
-                        <li><a href="{{ route('portfolio') }}" class="hover:underline">Portofolio</a></li>
+                        <li><a href="{{ route('portfolio') }}" class="hover:underline">{{ __('Portofolio') }}</a></li>
                         <li><span aria-hidden="true">/</span></li>
                         <li aria-current="page" class="text-[#4F46E5] font-medium">{{ $label }}</li>
                     @endif
@@ -122,7 +122,7 @@
             <div class="flex flex-wrap gap-3 mb-12" role="group" aria-label="Filter kategori portofolio">
                 <a href="{{ route('portfolio') }}"
                     class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full border transition-all duration-300 {{ $activeCategory === 'all' ? 'bg-[#4F46E5] border-[#4F46E5] text-white shadow-lg shadow-indigo-200' : 'bg-white border-gray-200 text-gray-600 hover:border-[#4F46E5] hover:text-[#4F46E5]' }}">
-                    Semua
+                    {{ __('Semua') }}
                     <span class="text-xs px-2 py-0.5 rounded-full {{ $activeCategory === 'all' ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-500' }}">{{ $totalImages }}</span>
                 </a>
                 <a href="{{ route('portfolio', 'entertaiment') }}"
@@ -149,9 +149,9 @@
 
             @if($images->isEmpty())
                 <div class="bg-white shadow-md rounded-[20px] p-12 text-center">
-                    <p class="text-gray-500">Belum ada proyek pada kategori ini.</p>
+                    <p class="text-gray-500">{{ __('Belum ada proyek pada kategori ini.') }}</p>
                     <a href="{{ route('portfolio') }}" class="mt-4 inline-flex items-center justify-center bg-[#4F46E5] text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-indigo-600 transition-colors">
-                        Lihat Semua Portofolio
+                        {{ __('Lihat Semua Portofolio') }}
                     </a>
                 </div>
             @else

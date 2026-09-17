@@ -42,7 +42,7 @@
         <div class="w-full pt-10 md:pt-16 pb-16 md:pb-20">
             <nav aria-label="Breadcrumb" class="text-sm text-gray-500 mb-10">
                 <ol class="flex flex-wrap items-center gap-x-2 gap-y-1">
-                    <li><a href="{{ url('/') }}" class="hover:underline">Beranda</a></li>
+                    <li><a href="{{ url('/') }}" class="hover:underline">{{ __('Beranda') }}</a></li>
                     <li><span aria-hidden="true">/</span></li>
                     <li><a href="{{ route('blog') }}" class="hover:underline">Blog</a></li>
                     <li><span aria-hidden="true">/</span></li>
@@ -55,7 +55,7 @@
                     {{ $post['title'] }}
                 </h1>
                 <p class="text-sm text-gray-500 mb-10">
-                    Dipublikasikan oleh Hanz Management
+                    {{ __('Dipublikasikan oleh Hanz Management') }}
                 </p>
 
                 <div class="prose max-w-none space-y-6">
@@ -67,13 +67,13 @@
                 </div>
 
                 <div class="mt-12 bg-[#4F46E5] text-white rounded-[20px] p-6 md:p-8">
-                    <h2 class="text-xl md:text-2xl font-bold mb-3">Butuh Bantuan Jasa SPG atau Manpower Event?</h2>
+                    <h2 class="text-xl md:text-2xl font-bold mb-3">{{ __('Butuh Bantuan Jasa SPG atau Manpower Event?') }}</h2>
                     <p class="text-white/90 leading-relaxed mb-6">
-                        Hubungi Hanz Management untuk kebutuhan SPG, manpower event, dan jasa event organizer di seluruh Indonesia. Tim kami siap membantu.
+                        {{ __('Hubungi Hanz Management untuk kebutuhan SPG, manpower event, dan jasa event organizer di seluruh Indonesia. Tim kami siap membantu.') }}
                     </p>
                     <a href="https://wa.me/6282110040066" target="_blank" rel="noopener"
                         class="inline-flex items-center gap-2 bg-white text-[#4F46E5] rounded-full px-6 py-3 text-sm font-semibold hover:bg-indigo-50 transition-colors">
-                        Konsultasi via WhatsApp
+                        {{ __('Konsultasi via WhatsApp') }}
                     </a>
                 </div>
             </article>
@@ -81,7 +81,7 @@
             @if($related->isNotEmpty())
             <div class="mt-16">
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1a1a1a] leading-tight mb-8">
-                    Artikel Lainnya
+                    {{ __('Artikel Lainnya') }}
                 </h2>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                     @foreach($related as $rel)

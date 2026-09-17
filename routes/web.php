@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
@@ -23,6 +24,15 @@ Route::get('/services/{slug}', [ServiceController::class, 'show'])
 
 // ==== SEO Landing Pages (Service + Local SPG per Kota) ====
 $landingSlugs = 'jasa-spg|jasa-spb|jasa-usher|jasa-talent|manpower-event|event|promotion|entertainment|production|branding|jasa-spg-jakarta|jasa-spg-bogor|jasa-spg-bandung|jasa-spg-depok|jasa-spg-bekasi|jasa-spg-tangerang|jasa-spg-surabaya';
+
+// Ganti bahasa (wajib sebelum rute catch-all)
+Route::get('/locale/{locale}', function (string $locale, Request $request) {
+    abort_unless(in_array($locale, ['id', 'en']), 404);
+
+    $request->session()->put('locale', $locale);
+
+    return redirect()->back();
+})->name('locale.switch');
 
 Route::get('/{slug}', [LandingController::class, 'index'])
     ->where('slug', $landingSlugs);
