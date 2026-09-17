@@ -432,7 +432,7 @@
         </div>
       </div>
       <div class="absolute top-2 left-2 right-2">
-      <h3 class="bg-white text-sm md:lg line-clamp-1 w-[fit-content] rounded-[20px] px-4 py-1">
+      <h3 class="bg-white text-xs md:lg line-clamp-1 w-[fit-content] rounded-[20px] px-4 py-1">
         Entertainment
       </h3>
       </div>
@@ -450,7 +450,7 @@
         </div>
       </div>
       <div class="absolute top-2 left-2 right-2">
-      <h3 class="bg-white text-sm md:lg line-clamp-1 w-[fit-content] rounded-[20px] px-4 py-1">
+      <h3 class="bg-white text-xs md:lg line-clamp-1 w-[fit-content] rounded-[20px] px-4 py-1">
         Promotion
       </h3>
       </div>
@@ -468,7 +468,7 @@
         </div>
       </div>
       <div class="absolute top-2 left-2 right-2">
-      <h3 class="bg-white text-sm md:lg line-clamp-1 w-[fit-content] rounded-[20px] px-4 py-1">
+      <h3 class="bg-white text-xs md:lg line-clamp-1 w-[fit-content] rounded-[20px] px-4 py-1">
         Event
       </h3>
       </div>
@@ -486,7 +486,7 @@
         </div>
       </div>
       <div class="absolute top-2 left-2 right-2">
-      <h3 class="bg-white text-sm md:lg line-clamp-1 w-[fit-content] rounded-[20px] px-4 py-1">
+      <h3 class="bg-white text-xs md:lg line-clamp-1 w-[fit-content] rounded-[20px] px-4 py-1">
          Production & Branding
       </h3>
       </div>
